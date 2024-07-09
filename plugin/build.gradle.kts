@@ -2,6 +2,8 @@ plugins {
     alias(libs.plugins.jvm)
     alias(libs.plugins.runpaper)
     alias(libs.plugins.serialization)
+    alias(libs.plugins.shadow)
+
 }
 
 repositories {
