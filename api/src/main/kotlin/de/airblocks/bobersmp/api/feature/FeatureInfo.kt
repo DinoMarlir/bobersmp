@@ -2,5 +2,5 @@ package de.airblocks.bobersmp.api.feature
 
 annotation class FeatureInfo(
     val id: String,
-    val defaultlyEnabled: Boolean = false
+    val defaultlyEnabled: Boolean = true
 )

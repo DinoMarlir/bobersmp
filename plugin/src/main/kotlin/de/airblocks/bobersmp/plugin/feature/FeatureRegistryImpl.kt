@@ -6,9 +6,6 @@ import de.airblocks.bobersmp.api.feature.AbstractFeatureRegistry
 class FeatureRegistryImpl: AbstractFeatureRegistry() {
     private val features: MutableMap<AbstractFeature, Boolean> = mutableMapOf()
 
-    fun initialize() {
-    }
-
     override fun registerFeature(feature: AbstractFeature) {
         features[feature] = feature.getFeatureInfo().defaultlyEnabled
     }
