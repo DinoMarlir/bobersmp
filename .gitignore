@@ -8,3 +8,6 @@ build
 # JetBrains IDE
 .idea/
 *.iml
+
+### RUN
+*/run*

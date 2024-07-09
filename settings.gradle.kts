@@ -4,4 +4,5 @@ plugins {
 
 rootProject.name = "bobersmp-root"
 
-include("app")
+include("plugin")
+include("api")
