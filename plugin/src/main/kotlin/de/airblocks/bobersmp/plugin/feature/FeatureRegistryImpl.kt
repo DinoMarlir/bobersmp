@@ -6,31 +6,36 @@ import de.airblocks.bobersmp.api.feature.AbstractFeatureRegistry
 class FeatureRegistryImpl: AbstractFeatureRegistry() {
     private val features: MutableMap<AbstractFeature, Boolean> = mutableMapOf()
 
+    fun initialize() {
+    }
+
     override fun registerFeature(feature: AbstractFeature) {
-        TODO("Not yet implemented")
+        features[feature] = feature.getFeatureInfo().defaultlyEnabled
     }
 
     override fun enableFeature(feature: AbstractFeature) {
-        TODO("Not yet implemented")
+        feature.enable()
+        features[feature] = true
     }
 
     override fun disableFeature(feature: AbstractFeature) {
-        TODO("Not yet implemented")
+        feature.disable()
+        features[feature] = false
     }
 
     override fun getFeatures(): Map<AbstractFeature, Boolean> {
-        TODO("Not yet implemented")
+        return features
     }
 
     override fun getEnabledFeatures(): Map<AbstractFeature, Boolean> {
-        TODO("Not yet implemented")
+        return features.filter { it.value }
     }
 
     override fun getDisabledFeatures(): Map<AbstractFeature, Boolean> {
-        TODO("Not yet implemented")
+        return features.filter { !it.value }
     }
 
     override fun getFeatureById(id: String): AbstractFeature? {
-        TODO("Not yet implemented")
+        return features.keys.find { it.getFeatureInfo().id == id }
     }
 }
